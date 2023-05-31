@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">GoOutfit-Android</string>
+    <string name="nav_bottom_home">Home</string>
+    <string name="nav_bottom_history">History</string>
+    <string name="nav_bottom_settings">Settings</string>
+    <string name="next">Next</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--    String for Onboarding Screen-->
+    <string name="onboarding_1">Start your day with fresh outfit ideas delivered straight to your feed</string>
+    <string name="onboarding_2">Discover new styles, trends, and accessories to elevate your fashion game.</string>
+    <string name="onboarding_3">Let our app be your personal stylist and express your unique personality through fashion.</string>
+    <string name="finish">Finish</string>
 </resources>
