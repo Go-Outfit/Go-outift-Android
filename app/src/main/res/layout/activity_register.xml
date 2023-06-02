@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingHorizontal="32dp"
-    tools:context=".ui.auth.login.LoginFragment">
+    tools:context=".ui.auth.register.RegisterActivity">
 
     <TextView
         android:id="@+id/headerTittle"
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:paddingHorizontal="48dp"
         android:layout_marginTop="100dp"
-        android:text="@string/login"
+        android:text="@string/register"
         android:fontFamily="@font/font_inter_semibold"
         android:textColor="@color/black"
         android:textSize="24sp"
@@ -88,24 +88,24 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:paddingVertical="12dp"
         android:backgroundTint="@color/custom_primary_1"
-        android:text="@string/login"
+        android:text="@string/sigunp"
         android:fontFamily="@font/font_inter_semibold"
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/til_password"/>
 
     <TextView
-        android:id="@+id/tv_havent_account"
+        android:id="@+id/tv_have_account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:fontFamily="@font/font_inter_regular"
-        android:text="@string/login_havent_account"
+        android:text="@string/register_have_account"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="14sp"

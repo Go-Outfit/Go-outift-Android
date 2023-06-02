@@ -12,7 +12,7 @@
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_marginTop="120dp"
-        android:src="@drawable/onboard_screen_1"
+        android:src="@drawable/ilu_onboard_screen_1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

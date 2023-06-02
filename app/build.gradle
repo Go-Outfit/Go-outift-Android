@@ -35,6 +35,9 @@ android {
             assets.srcDirs += files('src/main/assets')
         }
     }
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
