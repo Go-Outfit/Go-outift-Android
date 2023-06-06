@@ -2,14 +2,16 @@
 
     <!--    Default String-->
     <string name="app_name">GoOutfit-Android</string>
-    <string name="nav_bottom_home">Home</string>
-    <string name="nav_bottom_history">History</string>
-    <string name="nav_bottom_settings">Settings</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!--    String for Button-->
     <string name="finish">Finish</string>
     <string name="next">Next</string>
+
+    <!--    String for Bottom Navigation-->
+    <string name="nav_bottom_home">Home</string>
+    <string name="nav_bottom_history">History</string>
+    <string name="nav_bottom_settings">Settings</string>
 
     <!--    String for Onboarding Screen-->
     <string name="onboarding_1">Start your day with fresh outfit ideas delivered straight to your feed</string>

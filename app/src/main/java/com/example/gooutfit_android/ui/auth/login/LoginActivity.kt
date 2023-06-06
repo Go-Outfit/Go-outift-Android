@@ -6,6 +6,7 @@ import android.os.Bundle
 import com.example.gooutfit_android.R
 import com.example.gooutfit_android.databinding.ActivityLoginBinding
 import com.example.gooutfit_android.ui.auth.register.RegisterActivity
+import com.example.gooutfit_android.ui.dashboard.DashboardActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -18,6 +19,10 @@ class LoginActivity : AppCompatActivity() {
 
         binding.tvHaventAccount.setOnClickListener{
             startActivity(Intent(this, RegisterActivity::class.java))
+        }
+
+        binding.btnLogin.setOnClickListener{
+            startActivity(Intent(this, DashboardActivity::class.java))
         }
     }
 }
