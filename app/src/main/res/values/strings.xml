@@ -1,7 +1,7 @@
 <resources>
 
     <!--    Default String-->
-    <string name="app_name">GoOutfit-Android</string>
+    <string name="app_name">GoOutfit</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!--    String for Button-->
@@ -36,4 +36,11 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="card_home_header_text_1">Discover Your Perfect Look</string>
+    <string name="card_home_header_text_2">Unlock the Ideal Outfit for Every Occasion!</string>
+    <string name="find_outfit">Find Outfit</string>
+    <string name="home_rec_tops">Recommendation Tops For You</string>
+    <string name="home_rec_bottoms">Recommendation Bottoms For You</string>
+    <string name="home_rec_footwears">Recommendation Footwears For You</string>
+    <string name="cards_img">cards_img</string>
 </resources>
