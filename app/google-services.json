@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "719893708467",
+    "project_id": "auth-1-81f47",
+    "storage_bucket": "auth-1-81f47.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:719893708467:android:6b008c8896e3c7e21abac6",
+        "android_client_info": {
+          "package_name": "com.example.gooutfit_android"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaX42Re8k4VtS43cxrKcKnV2cuqqtWsQQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

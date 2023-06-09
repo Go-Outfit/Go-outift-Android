@@ -8,10 +8,12 @@ import com.example.gooutfit_android.databinding.ActivityDashboardBinding
 import com.example.gooutfit_android.ui.dashboard.history.HistoryFragment
 import com.example.gooutfit_android.ui.dashboard.home.HomeFragment
 import com.example.gooutfit_android.ui.dashboard.setting.SettingFragment
+import com.google.firebase.auth.FirebaseAuth
 
 class DashboardActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityDashboardBinding
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
