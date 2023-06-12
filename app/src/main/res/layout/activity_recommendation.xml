@@ -5,73 +5,73 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingHorizontal="24dp"
-    android:paddingTop="24dp"
-    tools:context=".ui.dashboard.home.HomeFragment">
+    tools:context=".ui.recommendation.RecommendationActivity">
 
-    <LinearLayout
-        android:id="@+id/card_home_header_layout"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/card_home_header"
-        android:orientation="vertical"
-        android:padding="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="?attr/actionBarSize"
+        android:elevation="4dp"
+        app:titleTextColor="@color/white"
+        android:paddingEnd="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="RtlSymmetry">
 
-        <TextView
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/font_inter_semibold"
-            android:text="@string/card_home_header_text_1"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:layout_height="match_parent">
 
-        <TextView
+            <ImageView
+                android:id="@+id/backButton"
+                android:layout_width="32dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_arrow_back_24" />
+
+
+            <ImageView
+                android:id="@+id/searchButton"
+                android:layout_width="32dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_search_24" />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:fontFamily="@font/font_inter_regular"
-            android:text="@string/card_home_header_text_2"
-            android:textColor="@color/white"
-            android:textSize="14sp" />
+            android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/btn_find_outfit"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:paddingVertical="12dp"
-            android:backgroundTint="@color/white"
-            android:text="@string/find_outfit"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:fontFamily="@font/font_inter_semibold"
-            android:textAllCaps="false"/>
+        </FrameLayout>
 
-    </LinearLayout>
+    </ScrollView>
 
     <TextView
         android:id="@+id/tv_TopsRecommendation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingHorizontal="24dp"
         android:fontFamily="@font/font_inter_semibold"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="@string/home_rec_tops"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintStart_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/card_home_header_layout"/>
+        app:layout_constraintTop_toBottomOf="@id/toolbar"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvTopsRecommendation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:layout_centerVertical="true"
-        android:orientation="horizontal"
-        tools:listitem="@layout/card_view_layout"
-        tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:paddingHorizontal="24dp"
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_TopsRecommendation"/>
 
@@ -79,8 +79,9 @@
         android:id="@+id/tv_BottomsRecommendation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingHorizontal="24dp"
         android:fontFamily="@font/font_inter_semibold"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:text="@string/home_rec_bottoms"
         android:textColor="@color/black"
         android:textSize="16sp"
@@ -91,10 +92,7 @@
         android:id="@+id/rvBottomsRecommendation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:layout_centerVertical="true"
-        android:orientation="horizontal"
-        tools:listitem="@layout/card_view_layout"
-        tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:paddingHorizontal="24dp"
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_BottomsRecommendation"/>
 
@@ -102,8 +100,9 @@
         android:id="@+id/tv_FootwearRecommendation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingHorizontal="24dp"
         android:fontFamily="@font/font_inter_semibold"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:text="@string/home_rec_footwears"
         android:textColor="@color/black"
         android:textSize="16sp"
@@ -114,10 +113,7 @@
         android:id="@+id/rvFootwearRecommendation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:layout_centerVertical="true"
-        android:orientation="horizontal"
-        tools:listitem="@layout/card_view_layout"
-        tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:paddingHorizontal="24dp"
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_FootwearRecommendation"/>
 

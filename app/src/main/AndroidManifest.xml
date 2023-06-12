@@ -15,6 +15,20 @@
         android:theme="@style/Theme.GoOutfitAndroid"
         tools:targetApi="31">
         <activity
+            android:name="com.example.gooutfit_android.ui.recommendation.RecommendationActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name="com.example.gooutfit_android.ui.recommendation.FindOutfitActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name="com.example.gooutfit_android.ui.dashboard.DashboardActivity"
             android:exported="false">
             <meta-data
