@@ -37,22 +37,7 @@
                 android:src="@drawable/ic_search_24" />
 
         </RelativeLayout>
-
     </androidx.appcompat.widget.Toolbar>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        </FrameLayout>
-
-    </ScrollView>
 
     <TextView
         android:id="@+id/tv_TopsRecommendation"
@@ -75,26 +60,36 @@
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_TopsRecommendation"/>
 
-    <TextView
-        android:id="@+id/tv_BottomsRecommendation"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="24dp"
-        android:fontFamily="@font/font_inter_semibold"
-        android:layout_marginTop="16dp"
-        android:text="@string/home_rec_bottoms"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rvTopsRecommendation"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.5">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvBottomsRecommendation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingHorizontal="24dp"
-        app:layout_constraintStart_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_BottomsRecommendation"/>
+        <TextView
+            android:id="@+id/tv_BottomsRecommendation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="24dp"
+            android:fontFamily="@font/font_inter_semibold"
+            android:layout_marginTop="16dp"
+            android:text="@string/home_rec_bottoms"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvBottomsRecommendation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="24dp"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_BottomsRecommendation"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <TextView
         android:id="@+id/tv_FootwearRecommendation"
@@ -107,14 +102,15 @@
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintStart_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rvBottomsRecommendation"/>
+        app:layout_constraintBottom_toTopOf="@id/rvFootwearRecommendation"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvFootwearRecommendation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingHorizontal="24dp"
+        android:layout_marginBottom="24dp"
         app:layout_constraintStart_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_FootwearRecommendation"/>
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

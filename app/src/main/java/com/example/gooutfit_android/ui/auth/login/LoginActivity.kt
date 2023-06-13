@@ -17,6 +17,7 @@ import com.example.gooutfit_android.ui.auth.viewmodel.AuthRequest
 import com.example.gooutfit_android.ui.auth.viewmodel.AuthResponse
 import com.example.gooutfit_android.ui.auth.viewmodel.AuthViewModel
 import com.example.gooutfit_android.ui.dashboard.DashboardActivity
+import com.example.gooutfit_android.ui.recommendation.viewmodel.RecViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.jakewharton.rxbinding2.widget.RxTextView
 import io.reactivex.Observable
@@ -30,11 +31,14 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     private lateinit var auth: FirebaseAuth
     private lateinit var authViewModel: AuthViewModel
+    private lateinit var viewModel: RecViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        viewModel = ViewModelProvider(this).get(RecViewModel::class.java)
 
         //        Validation
         val emailStream = RxTextView.textChanges(binding.etEmail)
@@ -101,10 +105,41 @@ class LoginActivity : AppCompatActivity() {
 
         authViewModel.idToken.observe(this) { idToken ->
             if (!idToken.isNullOrEmpty()) {
-                val intent = Intent(this@LoginActivity, DashboardActivity::class.java)
-                Toast.makeText(this@LoginActivity, "Login Success", Toast.LENGTH_SHORT).show()
-                startActivity(intent)
-                finish()
+                viewModel.randomDataToRepository()
+                viewModel.footwearList.observe(this) { footwearList ->
+                    viewModel.topwearList.observe(this) { topwearList ->
+                        viewModel.bottomwearList.observe(this) { bottomwearList ->
+                            // Create an intent object
+                            val intent = Intent(this@LoginActivity, DashboardActivity::class.java).also {
+                                it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                            }
+
+                            // Create a bundle to hold the observations
+                            val bundle = Bundle()
+
+                            // Add the footwearList as an extra to the bundle
+                            bundle.putStringArrayList("footwearList", ArrayList(footwearList))
+
+                            // Add the topwearList as an extra to the bundle
+                            bundle.putStringArrayList("topwearList", ArrayList(topwearList))
+
+                            // Add the bottomwearList as an extra to the bundle
+                            bundle.putStringArrayList("bottomwearList", ArrayList(bottomwearList))
+
+                            // Add the bundle as an extra to the intent
+                            intent.putExtra("observationBundle", bundle)
+
+                            // Start the RecommendationActivity with the intent
+                            Toast.makeText(this@LoginActivity, "Login Success", Toast.LENGTH_SHORT).show()
+                            startActivity(intent)
+                            finish()
+                        }
+                    }
+                }
+//                val intent = Intent(this@LoginActivity, DashboardActivity::class.java)
+//                Toast.makeText(this@LoginActivity, "Login Success", Toast.LENGTH_SHORT).show()
+//                startActivity(intent)
+//                finish()
             } else {
                 Toast.makeText(this@LoginActivity, "Login Failed", Toast.LENGTH_SHORT).show()
             }

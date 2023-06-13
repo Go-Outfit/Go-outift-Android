@@ -10,6 +10,7 @@ import com.example.gooutfit_android.ui.auth.viewmodel.AuthResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.*
 
 class RecViewModel(application: Application) : AndroidViewModel(application)  {
 
@@ -50,6 +51,24 @@ class RecViewModel(application: Application) : AndroidViewModel(application)  {
         _fashionStyleLiveData.value = value
     }
 
+    fun randomDataToRepository() {
+        val random = Random()
+        val gData = listOf("male", "female")
+        val wData = listOf("hot", "rain")
+        val sData = listOf("formal")
+
+        val randomRequest = RecRequest().apply {
+            gender = gData[random.nextInt(gData.size)]
+            weather = wData[random.nextInt(wData.size)]
+            situation = "formal"
+            fashion_style = "formal"
+        }
+
+        // Call your repository's saveData() method or perform any other necessary operations
+        Log.e("SendDataRandom", randomRequest.toString().trim())
+        sendData(randomRequest)
+    }
+
     // Implement a method to save the data to the repository
     fun saveDataToRepository() {
         val recRequest = RecRequest().apply {
@@ -60,7 +79,7 @@ class RecViewModel(application: Application) : AndroidViewModel(application)  {
         }
 
         // Call your repository's saveData() method or perform any other necessary operations
-        Log.e("SendData", "$recRequest")
+        Log.e("SendData", recRequest.toString().trim())
         sendData(recRequest)
     }
 
@@ -128,8 +147,8 @@ class RecViewModel(application: Application) : AndroidViewModel(application)  {
         _footwearList.value = footwearList
         Log.d("ADE", "Footwear List: ${_footwearList.value}")
         _topwearList.value = topwearList
-        Log.d("ADE", "$_topwearList")
+        Log.d("ADE", "Topwear List:${_topwearList.value}")
         _bottomwearList.value = bottomwearList
-        Log.d("ADE", "$_bottomwearList")
+        Log.d("ADE", "Bottomwear List:${_bottomwearList.value}")
     }
 }
